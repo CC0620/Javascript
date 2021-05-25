@@ -90,9 +90,45 @@
     
 // }
 
-const user = {
-    name:'太郎',
-    age:30,
-    area:'東京',
-};
-console.log(user);
+// const user = {
+        
+//     name: '太郎',
+//     age: 30,
+//     area: '東京都'
+    
+// };
+
+// console.log(user);
+
+// const user = {
+//     name: '太郎',
+//       age: 30,
+//       area: '東京都'
+// };
+
+// user.name ='山田太郎';
+
+// console.log(user);
+
+// const user ={
+
+//     name:'太郎',
+//     age:30,
+//     area:'東京都'
+// };
+
+// user.hobby = '映画鑑賞';
+
+// delete user.area;
+
+// console.log(user);
+
+    const user_name = prompt('名前を入力してください');
+    const user_tell = prompt('電話番号を入力してください');
+
+    const user = {}
+    
+    user.name = user_name;
+    user.tell = user_tell;
+    
+    console.log(user);
