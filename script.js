@@ -61,19 +61,38 @@
 
 // myFunc3('侍',3);
 
-const products = ['テレビ','冷蔵庫','机','スマホ','本棚','椅子','テーブル'];
+// const products = ['テレビ','冷蔵庫','机','スマホ','本棚','椅子','テーブル'];
 
-    const search = (items, target) => {
+//     const search = (items, target) => {
 
-      const result = items.filter(item => item === target);
+//       const result = items.filter(item => item === target);
 
-      if(result.length) {
-        console.log('商品が見つかりました！');
-      } else {
-        console.log('お探しの商品は見つかりませんでした');
-      }
+//       if(result.length) {
+//         console.log('商品が見つかりました！');
+//       } else {
+//         console.log('お探しの商品は見つかりませんでした');
+//       }
 
-    }
+//     }
 
-    search(products, 'スマホ');
+//     search(products, 'スマホ');
 
+// const Dollar = 108;
+// const getDollartoYen = (number) => {
+//     return number * Dollar;
+// }
+
+// while(true) {
+//     const money = prompt('ドルから円に換算します');
+//     if(money){
+//         console.log(getDollartoYen(money)+ '円です');
+//     } else break;
+    
+// }
+
+const user = {
+    name:'太郎',
+    age:30,
+    area:'東京',
+};
+console.log(user);
