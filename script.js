@@ -123,12 +123,34 @@
 
 // console.log(user);
 
-    const user_name = prompt('名前を入力してください');
-    const user_tell = prompt('電話番号を入力してください');
+    // const user_name = prompt('名前を入力してください');
+    // const user_tell = prompt('電話番号を入力してください');
 
-    const user = {}
+    // const user = {}
     
-    user.name = user_name;
-    user.tell = user_tell;
+    // user.name = user_name;
+    // user.tell = user_tell;
     
-    console.log(user);
+    // console.log(user);
+
+    // class Animal {
+    //     constructor(name, age) {
+    //       this.name = name;
+    //       this.age = age;
+    //     }
+    //   }
+      
+    //   class Cat extends Animal {
+    //     constructor(name, age, type) {
+    //       super(name, age);
+    //       this.type = type;
+    //     }
+        
+    //     speak() {
+    //       console.log(this.name + 'が「にゃーん」と鳴きました！');
+    //     }
+    //   }
+      
+    //   const cat = new Cat('シロ', 6, 'シャム');
+      
+    //   cat.speak();
