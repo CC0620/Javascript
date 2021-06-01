@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 id="text">こんにちは</h1> -->
+    <form id="dialog" name="dialog">
+      <p>ボタンをクリックしてください</p>
+      <input type="button" name="yes" value="はい" />
+      <input type="button" name="no" value="いいえ" />
+      <input type="button" name="cancel" value="キャンセル" />
+    </form>
+    <script>
+      const h1 = document.getElementById("text");
+      let count = 0;
+
+      const timerID = setInterval(() => {
+        h1.style.fontSize = count + `px`;
+        count++;
+
+        if (count >= 100) clearInterval(timerID);
+      }, 10);
+    </script>
+  </body>
+</html>
