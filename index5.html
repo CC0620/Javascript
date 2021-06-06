@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
+      /* body {
         margin: 0;
       }
       .screenBlue {
@@ -41,7 +41,7 @@
       .pagetop:hover {
         background-color: #ddd;
         cursor: pointer;
-      }
+      } */
       /* #dialog {
         width: 250px;
         padding: 30px 20px;
@@ -52,14 +52,14 @@
     </style>
   </head>
   <body>
-    <div class="screenBlue">ここがトップページです</div>
+    <!-- <div class="screenBlue">ここがトップページです</div>
     >
     <div class="screenRed">2ページ目</div>
     <div class="screenBlue">3ページ目</div>
     <div class="screenRed">4ページ目</div>
     <div class="screenBlue">5ページ目</div>
 
-    <a class="pagetop" id="top" href="#">TOPに戻る</a>
+    <a class="pagetop" id="top" href="#">TOPに戻る</a> -->
     <!-- <h1 id="text">こんにちは</h1> -->
     <!-- <form id="dialog" name="dialog">
       <p>ボタンをクリックしてください</p>
@@ -68,17 +68,33 @@
       <input type="button" name="cancel" value="キャンセル" />
     </form> -->
     <script>
-      const topLink = document.getElementById("top");
+      setTimeout(() => {
+        console.log("１つ目の処理が完了");
 
-      window.addEventListener("scroll", () => {
-        const scrollValue = document.scrollingElement.scrollTop;
+        setTimeout(() => {
+          console.log("２つ目の処理が完了");
 
-        if (scrollValue >= 300) {
-          topLink.style.display = "inline";
-        } else if (scrollValue < 300) {
-          topLink.style.display = "none";
-        }
-      });
+          setTimeout(() => {
+            console.log("３つ目の処理が完了");
+          }, 1000);
+        }, 3000);
+      }, 2000);
+
+      //       const topLink = document.getElementById("top");
+
+      // window.addEventListener("scroll", () => {
+      //   const scrollValue = document.scrollingElement.scrollTop;
+
+      //   if (scrollValue >= 300) {
+
+      //       topLink.style.display = "inline";
+
+      //   } else if (scrollValue < 300) {
+
+      //       topLink.style.display = "none";
+
+      //   }
+      // });
 
       //   const h1 = document.getElementById("text");
       //   let count = 0;
