@@ -5,25 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .screenBlue {
+        height: 100vh;
+        color: #fff;
+        font-size: 5em;
+        text-align: center;
+        background-color: #88f;
+      }
+
+      .screenRed {
+        height: 100vh;
+        color: #fff;
+        font-size: 5em;
+        text-align: center;
+        background-color: #f88;
+      }
+
+      .pagetop {
+        display: none;
+
+        padding: 40px 10px;
+        background-color: #fff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 50%;
+
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+      }
+      .pagetop:hover {
+        background-color: #ddd;
+        cursor: pointer;
+      }
+      /* #dialog {
+        width: 250px;
+        padding: 30px 20px;
+        text-align: center;
+        border: 1px solid #aaa;
+        box-shadow: 2px 2px 4px #888;
+      } */
+    </style>
   </head>
   <body>
+    <div class="screenBlue">ここがトップページです</div>
+    >
+    <div class="screenRed">2ページ目</div>
+    <div class="screenBlue">3ページ目</div>
+    <div class="screenRed">4ページ目</div>
+    <div class="screenBlue">5ページ目</div>
+
+    <a class="pagetop" id="top" href="#">TOPに戻る</a>
     <!-- <h1 id="text">こんにちは</h1> -->
-    <form id="dialog" name="dialog">
+    <!-- <form id="dialog" name="dialog">
       <p>ボタンをクリックしてください</p>
       <input type="button" name="yes" value="はい" />
       <input type="button" name="no" value="いいえ" />
       <input type="button" name="cancel" value="キャンセル" />
-    </form>
+    </form> -->
     <script>
-      const h1 = document.getElementById("text");
-      let count = 0;
+      const topLink = document.getElementById("top");
 
-      const timerID = setInterval(() => {
-        h1.style.fontSize = count + `px`;
-        count++;
+      window.addEventListener("scroll", () => {
+        const scrollValue = document.scrollingElement.scrollTop;
 
-        if (count >= 100) clearInterval(timerID);
-      }, 10);
+        if (scrollValue >= 300) {
+          topLink.style.display = "inline";
+        } else if (scrollValue < 300) {
+          topLink.style.display = "none";
+        }
+      });
+
+      //   const h1 = document.getElementById("text");
+      //   let count = 0;
+
+      //   const timerID = setInterval(() => {
+      //     h1.style.fontSize = count + `px`;
+      //     count++;
+
+      //     if (count >= 100) clearInterval(timerID);
+      //   }, 10);
+      // const form = document.forms.dialog;
+
+      // form.yes.addEventListener("click", () => {
+      //   console.log("「はい」がクリックされました");
+      // });
+
+      // form.no.addEventListener("click", () => {
+      //   console.log("「いいえ」がクリックされました");
+      // });
+
+      // form.cancel.addEventListener("click", () => {
+      //   console.log("「キャンセル」がクリックされました");
+      // });
     </script>
   </body>
 </html>
