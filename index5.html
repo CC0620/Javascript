@@ -68,17 +68,55 @@
       <input type="button" name="cancel" value="キャンセル" />
     </form> -->
     <script>
-      setTimeout(() => {
-        console.log("１つ目の処理が完了");
+      // const promise = new Promise((resolve) => {
+      //   setTimeout(() => {
+      //     resolve("処理が完了");
+      //   }, 2000);
+      // });
+      // promise.then((result) => console.log(result));
+      // const promise = new Promise(() => {
+      //   setTimeout(() => {
+      //     console.log("処理が完了");
+      //   }, 2000);
+      // });
+      const promise1 = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("１つ目の処理が完了");
+          }, 2000);
+        });
+      };
+      const promise2 = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("２つ目の処理が完了");
+          }, 2000);
+        });
+      };
 
-        setTimeout(() => {
-          console.log("２つ目の処理が完了");
-
+      const promise3 = () => {
+        return new Promise((resolve) => {
           setTimeout(() => {
             console.log("３つ目の処理が完了");
-          }, 1000);
-        }, 3000);
-      }, 2000);
+          }, 2000);
+        });
+      };
+
+      promise1()
+        .then((data) => {
+          console.log(data);
+          return promise2();
+        })
+
+        .then((data) => {
+          console.log(data);
+          return promise3();
+        })
+
+        .then((data) => console.log(data));
+
+      //   }, 3000);
+      // }, 2000);
 
       //       const topLink = document.getElementById("top");
 
