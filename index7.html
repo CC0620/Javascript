@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ruby関連の記事 by Qiita</h1>
+    <button id="btn">表示する</button>
+    <ul id="list"></ul>
+    <script>
+      const url = "https://qiita.com/api/v2/tags/Ruby/items";
+      const btn = document.getElementById("btn");
+      const list = document.getElementById("list");
+
+      const createList = (item) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+
+        a.href = item.url;
+        li.textContent = item.title;
+
+        a.appendChild(li);
+        list.appendChild(a);
+      };
+
+      btn.addEventListener("click", () => {
+        list.innerHTML = "";
+        fetch(url)
+          .then((data) => data.json())
+          .then((data) => {
+            data.forEach((item) => createList(item));
+          });
+      });
+
+      // console.log("スタート");
+
+      // const promise = new Promise(() => {
+      //   setTimeout(() => {
+      //     console.log("処理が完了");
+      //   }, 2000);
+      // });
+
+      // console.log("終了");
+    </script>
+  </body>
+</html>
